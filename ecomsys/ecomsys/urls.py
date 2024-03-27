@@ -6,6 +6,7 @@ from django.urls import include, path
 from book import urls as book_urls
 from cloth import urls as cloth_urls
 from mobilephone import urls as mobilephone_urls
+from user import urls as user_urls
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -13,6 +14,7 @@ urlpatterns = [
     path("api/", include(book_urls)),
     path("api/", include(mobilephone_urls)),
     path("api/", include(cloth_urls)),
+    path("api/", include(user_urls)),
 ]
 
 if settings.DEBUG:
