@@ -28,6 +28,11 @@ INSTALLED_APPS = [
     "mobilephone",
     "cloth",
     "user",
+    "cart",
+    "product",
+    "order",
+    "payment",
+    "shipment",
 ]
 
 MIDDLEWARE = [

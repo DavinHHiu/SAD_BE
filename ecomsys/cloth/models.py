@@ -1,12 +1,9 @@
 from django.db import models
+from product.models import Product
 
-
-class Cloth(models.Model):
-    name = models.CharField(max_length=255)
+class Cloth(Product):
     brand = models.CharField(max_length=255)
     size = models.CharField(max_length=10)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-    description = models.TextField()
     image = models.ImageField(upload_to="cloth_images/")
 
     class Meta:
