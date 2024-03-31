@@ -1,6 +1,5 @@
 from django.urls import path
-from cart.views import CartItemSerializer
 
-urlpatterns = [
-    path("/cart", CartItemSerializer.as_view())
-]
+from cart.views import CartListApiView
+
+urlpatterns = [path("cart/", CartListApiView.as_view())]

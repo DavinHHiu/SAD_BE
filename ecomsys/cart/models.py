@@ -1,14 +1,14 @@
 from django.db import models
 
+from order.models import Order
 from product.models import Product
+from user.models import User
 
 
 class CartItem(models.Model):
-    user = models.ForeignKey(
-        "User", on_delete=models.CASCADE, related_name="cart_items"
-    )
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="cart_items")
     order = models.ForeignKey(
-        "Order",
+        Order,
         on_delete=models.CASCADE,
         related_name="cart_items",
         blank=True,
