@@ -1,9 +1,11 @@
-from rest_framework import serializers
-
 from cloth.models import Cloth
+from product.serializers import ProductSerializer
+from rest_framework import serializers
 
 
 class ClothSerializer(serializers.ModelSerializer):
+    product = ProductSerializer()
+
     class Meta:
         model = Cloth
         fields = "__all__"

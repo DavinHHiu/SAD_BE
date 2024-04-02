@@ -1,9 +1,11 @@
-from rest_framework import serializers
-
 from mobilephone.models import MobilePhone
+from product.serializers import ProductSerializer
+from rest_framework import serializers
 
 
 class MobilePhoneSerializer(serializers.ModelSerializer):
+    product = ProductSerializer()
+
     class Meta:
         model = MobilePhone
         fields = "__all__"
