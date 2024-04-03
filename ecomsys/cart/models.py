@@ -1,5 +1,4 @@
 from django.db import models
-
 from order.models import Order
 from product.models import Product
 from user.models import User
@@ -16,8 +15,9 @@ class CartItem(models.Model):
         default=None,
     )
     product = models.OneToOneField(Product, on_delete=models.CASCADE)
-    quantiy = models.IntegerField(default=1)
+    quantity = models.IntegerField(default=1)
     is_paid = models.BooleanField(default=False)
+    image = models.ImageField()
     total_price = models.FloatField()
 
     def augment_quantity(self, quantity):
@@ -26,4 +26,4 @@ class CartItem(models.Model):
 
     def save(self, *args, **kwargs):
         self.total_price = self.quantity * self.product.price
-        super.save(self, *args, **kwargs)
+        super().save(*args, **kwargs)
