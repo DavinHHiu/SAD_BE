@@ -45,9 +45,7 @@ class UserProfileApiView(APIView):
     def put(self, request):
         print(request.data)
         user = self.get_object(request.data.get("id"))
-        print(user)
         serializer = UserSerializer(user, data=request.data)
-        print(serializer)
         if serializer.is_valid():
             user = serializer.save()
             return Response({"user_id": user.id}, status=status.HTTP_201_CREATED)
