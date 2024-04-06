@@ -1,5 +1,7 @@
+from book.models import Author, Book, Category, Publisher
 from django.contrib import admin
 
-from book.models import Book
-
 admin.site.register(Book)
+admin.site.register(Author)
+admin.site.register(Publisher)
+admin.site.register(Category)

@@ -1,10 +1,31 @@
-from book.models import Book
+from book.models import Author, Book, Category, Publisher
 from product.serializers import ProductSerializer
 from rest_framework import serializers
 
 
+class AuthorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Author
+        fields = "__all__"
+
+
+class PublisherSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Publisher
+        fields = "__all__"
+
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = "__all__"
+
+
 class BookSerializer(serializers.ModelSerializer):
     product = ProductSerializer()
+    author = AuthorSerializer()
+    publisher = PublisherSerializer()
+    category = CategorySerializer()
 
     class Meta:
         model = Book
