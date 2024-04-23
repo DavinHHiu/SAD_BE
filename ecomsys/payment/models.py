@@ -18,6 +18,10 @@ class Payment(models.Model):
         ("Failed", "Failed"),
         ("Refunded", "Refunded"),
     ]
-    payment_method = models.CharField(max_length=255, choices=payment_choices)
-    status = models.CharField(max_length=255, choices=status_choices)
+    payment_method = models.CharField(
+        max_length=255, choices=payment_choices, default="COD"
+    )
+    status = models.CharField(
+        max_length=255, choices=status_choices, default="Processing"
+    )
     total_price = models.FloatField()

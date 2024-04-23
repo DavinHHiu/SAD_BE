@@ -6,7 +6,10 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 from mobilephone import urls as mobilephone_urls
+from order import urls as order_urls
+from payment import urls as payment_urls
 from search import urls as search_urls
+from shipment import urls as shipment_urls
 from user import urls as user_urls
 
 urlpatterns = [
@@ -18,6 +21,9 @@ urlpatterns = [
     path("api/", include(user_urls)),
     path("api/", include(cart_urls)),
     path("api/", include(search_urls)),
+    path("api/", include(order_urls)),
+    path("api/", include(payment_urls)),
+    path("api/", include(shipment_urls)),
 ]
 
 if settings.DEBUG:

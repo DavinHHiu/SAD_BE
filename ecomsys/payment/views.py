@@ -1,4 +1,5 @@
 from payment.models import Payment
+from payment.serializers import PaymentSerializer
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -10,3 +11,19 @@ class PaymentMethodListApiView(APIView):
             "payment_methods": Payment.payment_choices_list,
         }
         return Response(response, status=status.HTTP_200_OK)
+
+    def put(self, request):
+        payment_id = request.data.get("payment_id")
+        payment_method = request.data.get("payment_method")
+        total_price = request.data.get("total_price")
+
+        payment = Payment.objects.get(id=payment_id)
+        if payment_method:
+            payment.payment_method = payment_method
+        if total_price:
+            payment.total_price = total_price
+        payment.save()
+
+        serializer = PaymentSerializer(payment)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)

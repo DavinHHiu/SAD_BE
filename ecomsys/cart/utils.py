@@ -13,13 +13,18 @@ def get_cart_items(user_id):
     return cart_items
 
 
+def get_cart_items_by_ids(user_id, cart_item_ids):
+    user = User.objects.get(id=user_id)
+    cart_items = user.cart_items.filter(id__in=cart_item_ids)
+    return cart_items
+
+
 def add_to_cart(user_id, product_id):
     product = Product.objects.get(id=product_id)
     cart_items = get_cart_items(user_id)
 
     for cart_item in cart_items:
         if cart_item.product == product:
-            print(cart_item.product.name, product.name)
             return
 
     new_cart_item = CartItem()
@@ -31,7 +36,6 @@ def add_to_cart(user_id, product_id):
         new_cart_item.image = Cloth.objects.get(product=product).image
     elif product.type == "mobile":
         new_cart_item.image = MobilePhone.objects.get(product=product).image
-    print(product.id)
     new_cart_item.save()
 
 
