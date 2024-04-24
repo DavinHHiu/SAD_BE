@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    'corsheaders',
     "bookapp",
 ]
 
@@ -60,13 +61,11 @@ WSGI_APPLICATION = "book.wsgi.application"
 # Database
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "ecomsys",
-        "USER": "root",
-        "PASSWORD": "123456",
-        "HOST": "localhost",
-        "POST": "3306",
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'ecomsys',
+        'HOST': 'localhost',
+        'PORT': 27017,
     }
 }
 

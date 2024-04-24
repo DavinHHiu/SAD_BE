@@ -3,3 +3,5 @@ django
 django-rest-framework
 django-cors-headers
 mysqlclient
+djongo
+pymongo=3.12.3
