@@ -13,3 +13,4 @@ class Product(models.Model):
             ("mobile", "mobile"),
         ],
     )
+    image = models.ImageField(upload_to=f'images/{type}')
