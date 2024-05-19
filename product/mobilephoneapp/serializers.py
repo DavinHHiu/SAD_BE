@@ -1,11 +1,13 @@
-from clothapp.models import Cloth
+from mobilephoneapp.models import MobilePhone
 from rest_framework import serializers
+from productapp.serializers import ProductSerializer
 
 
-class ClothSerializer(serializers.ModelSerializer):
+class MobilePhoneSerializer(serializers.ModelSerializer):
+    product = ProductSerializer()
 
     class Meta:
-        model = Cloth
+        model = MobilePhone
         fields = "__all__"
 
     def get_image_url(self, product):

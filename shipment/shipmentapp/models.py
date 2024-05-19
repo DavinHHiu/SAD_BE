@@ -22,7 +22,7 @@ class Shipment(models.Model):
         ("Returned", "Returned"),
     ]
 
-    order = models.IntegerField()
+    order_id = models.IntegerField()
     shipping_address = models.TextField(null=True, blank=True)
     shipping_method = models.CharField(
         max_length=255, choices=shipping_choices, default="Standard"

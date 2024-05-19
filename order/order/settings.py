@@ -20,7 +20,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    'corsheaders',
+    "corsheaders",
     "orderapp",
 ]
 
@@ -63,7 +63,7 @@ WSGI_APPLICATION = "order.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "ecomsys",
+        "NAME": "order_ecomsys",
         "USER": "root",
         "PASSWORD": "123456",
         "HOST": "localhost",

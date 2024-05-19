@@ -1,4 +1,5 @@
 from bookapp.models import Author, Book, Category, Publisher
+from productapp.serializers import ProductSerializer
 from rest_framework import serializers
 
 
@@ -24,6 +25,7 @@ class BookSerializer(serializers.ModelSerializer):
     author = AuthorSerializer()
     publisher = PublisherSerializer()
     category = CategorySerializer()
+    product = ProductSerializer()
 
     class Meta:
         model = Book

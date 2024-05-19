@@ -6,7 +6,8 @@ def main():
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "payment.settings")
     try:
         from django.core.management.commands.runserver import Command as runserver
-        runserver.default_port = "8007"
+
+        runserver.default_port = "8008"
 
         from django.core.management import execute_from_command_line
     except ImportError as exc:

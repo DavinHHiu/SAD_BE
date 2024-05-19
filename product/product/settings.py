@@ -20,8 +20,11 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    'corsheaders',
+    "corsheaders",
     "productapp",
+    "bookapp",
+    "clothapp",
+    "mobilephoneapp",
 ]
 
 MIDDLEWARE = [
@@ -61,11 +64,11 @@ WSGI_APPLICATION = "product.wsgi.application"
 # Database
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'ecomsys',
-        'HOST': 'localhost',
-        'PORT': 27017,
+    "default": {
+        "ENGINE": "djongo",
+        "NAME": "productdb",
+        "HOST": "localhost",
+        "PORT": 27017,
     }
 }
 
@@ -97,6 +100,10 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 
 USE_TZ = True
+
+MEDIA_ROOT = BASE_DIR / "media"
+
+MEDIA_URL = "/media/"
 
 
 # Static files (CSS, JavaScript, Images)

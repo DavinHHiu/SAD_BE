@@ -12,6 +12,19 @@ class ShippingDetailsApiView(APIView):
         }
         return Response(response, status=status.HTTP_200_OK)
 
+    def post(self, request, *args, **kwargs):
+        action = request.data.get("action")
+        order_id = request.data.get("order_id")
+
+        if action == "add":
+            shipment = Shipment(order_id=order_id)
+            shipment.save()
+        elif action == "get":
+            shipment = Shipment.objects.filter(order_id=order_id).first()
+
+        serializer = ShipmentSerializer(shipment)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
     def put(self, request):
         shipment_id = request.data.get("shipment_id")
         shipping_method = request.data.get("shipping_method")

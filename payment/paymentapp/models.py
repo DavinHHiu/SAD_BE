@@ -2,12 +2,12 @@ from django.db import models
 
 
 class Payment(models.Model):
-    order = models.IntegerField()
+    order_id = models.CharField(max_length=255)
     payment_choices = [
+        ("COD", "COD"),
         ("Mono", "Mono"),
         ("Card", "Card"),
         ("Online Banking", "Online Banking"),
-        ("COD", "COD"),
     ]
     payment_choices_list = [item[0] for item in payment_choices]
     status_choices = [

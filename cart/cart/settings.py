@@ -20,7 +20,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    'corsheaders',
+    "corsheaders",
     "cartapp",
 ]
 
@@ -63,7 +63,7 @@ WSGI_APPLICATION = "cart.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "ecomsys",
+        "NAME": "cart_ecomsys",
         "USER": "root",
         "PASSWORD": "123456",
         "HOST": "localhost",

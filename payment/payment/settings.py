@@ -20,7 +20,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    'corsheaders',
+    "corsheaders",
     "paymentapp",
 ]
 
@@ -63,7 +63,7 @@ WSGI_APPLICATION = "payment.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "ecomsys",
+        "NAME": "payment_ecomsys",
         "USER": "root",
         "PASSWORD": "123456",
         "HOST": "localhost",
